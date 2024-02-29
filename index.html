@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel and Tourism Website</title>
+  <style> /* Reset CSS */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url(tri.jpeg);
+      }
+      
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+      
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+      }
+      
+      header nav ul {
+        list-style: none;
+      }
+      
+      header nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+      
+      header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      #hero {
+        background-image: url('hero.jpg');
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+        padding: 100px 0;
+      }
+      
+      #hero h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+      
+      .btn {
+        display: inline-block;
+        background-color: #f44336;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      
+      #destinations {
+        padding: 50px 0;
+      }
+      
+      .destination {
+        margin-bottom: 30px;
+      }
+      
+      .destination img {
+        width: 100%;
+        border-radius: 5px;
+      }
+      
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+      </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Travel & Tourism</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="aa.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+   
+    
+  
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <h2>Explore the World with Us</h2>
+      <p>Book your dream vacation today!</p>
+      <a href="#" class="btn">Explore</a>
+    </div>
+  </section>
+
+  <section id="destinations">
+    <div class="container">
+      <h2>Popular Destinations</h2>
+      <div class="destination">
+        <img src="man.jpeg" alt="Destination 1">
+        <h3>MANALI</h3>
+        <p>Manali is synonymous streams and birdsong, forests and orchards and grandees of snow-capped mountains.<br> Manali is the real starting point of an ancient trade route which crosses the Rohtang and Baralacha passes,<br> and runs via Lahul and Ladakh to Kashmir while divergent road connects it with Spiti.</p>
+      </div>
+      <div class="destination">
+        <img src="tej.jpeg" alt="Destination 2">
+        <h3>TEJ MAHAL</h3>
+        <p>The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra.<br> It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the <br>tomb of his favourite wife, Mumtaz Mahal.</p>
+      </div>
+      <!-- Add more destinations as needed -->
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Travel & Tourism</p>
+    </div>
+  </footer>
+
+  <script>  // JavaScript (script.js)
+
+    // Function to toggle navigation menu on mobile devices
+    function toggleMenu() {
+        const nav = document.querySelector('header nav ul');
+        nav.classList.toggle('active');
+      }
+      
+      // Smooth scrolling to anchor links
+      document.querySelectorAll('header nav ul li a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+      
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Functionality to display more information on click of destination
+      document.querySelectorAll('.destination').forEach(destination => {
+        destination.addEventListener('click', function () {
+          // Toggle the active class for clicked destination
+          this.classList.toggle('active');
+      
+          // Close other destinations
+          document.querySelectorAll('.destination').forEach(otherDestination => {
+            if (otherDestination !== this) {
+              otherDestination.classList.remove('active');
+            }
+          });
+        });
+      });</script>
+</body>
+</html>
